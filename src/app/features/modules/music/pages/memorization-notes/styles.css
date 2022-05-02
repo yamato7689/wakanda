@@ -1,0 +1,75 @@
+.card--box{
+  background-color: #222831;
+  color: #fff;
+  height: 200px;
+  margin-right: 14px;
+  margin-bottom: 14px;
+  width: 200px;
+}
+.card{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.text-2xl{
+  transition: font-size 2s;
+}
+.card:hover .card--title .text-2xl{
+  font-size: 36px;
+}
+.chord{
+  display: none;
+  justify-content: center;
+  width: 100%;
+}
+.chord .note{
+  /* font-size: 12px; */
+  margin-right: 12px;
+  transition: font-size 2s;
+}
+
+
+@keyframes trasitions-display-in{
+  from {display: none;}
+  to {display: flex;}
+}
+
+@keyframes trasitions-display-out{
+  from {display: flex;}
+  to {display: none;}
+}
+
+@keyframes trasitions-text-in{
+  from {font-size: 1px;}
+  to {font-size: 32px;}
+}
+
+@keyframes trasitions-text-out{
+  from {font-size: 32px;}
+  to {font-size: 1px;}
+}
+
+.card:hover .chord{
+  display: flex;
+  animation-name: trasitions-display-in;
+  animation-duration: 2s;
+}
+
+.card:not(:hover) .chord{
+  animation-name: trasitions-display-out;
+  animation-duration: 2s;
+}
+
+.card:hover .chord .note{
+  font-size: 32px;
+  animation-name: trasitions-text-in;
+  animation-duration: 1s;
+}
+
+.card:not(:hover) .chord .note{
+  animation-name: trasitions-text-out;
+  animation-duration: 1s;
+}
